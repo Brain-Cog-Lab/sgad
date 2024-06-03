@@ -1,0 +1,20 @@
+Network:
+  save_every: 5  # save checkpoint period
+  name: "swgan_celeba"  # name of training
+  data_path: "../data" # where store data
+  epochs: 100  # epoch to train
+  batch_size: 64  # batch size
+  lr_D: 0.0002  # learning rate of Discriminator
+  lr_G: 0.0002  # learning rate of Generator
+  is_scheduler: False  # whether to use CosineAnnealing scheduler
+  n_steps: 16  # time steps for spiking neural network
+  encode_type: "direct"  # encoding type 
+  device: "cuda:0"  # device to use
+  net_D_direct_input: True # This determines net_D input shape, (...,784) or (...,28,28)
+  dataset: "CelebA"  # which dataset
+  is_data_normlized: False  # whether to normalize data
+  latent_dim: 20  # latent dim for Generator
+  is_mem: True  # whether to use membrane potential for outputs
+  from_checkpoint: False  # whether to load checkpoint
+  checkpoint_path: ""  # checkpoint path
+  scoring_mode: "AttentionScoring_RGB"  # attention scoring mode
